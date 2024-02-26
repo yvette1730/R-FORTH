@@ -25,6 +25,7 @@ add_subdirectory(hello-lib)
 add_subdirectory(lwlog-lib)
 add_subdirectory(lwlog-demo)
 add_subdirectory(gtest-demo)
+add_subdirectory(Forth_Tokens)
 
 # You can use add_subdirectory() to add your own work. 
 # Please don't remove the existing subdirectories.
