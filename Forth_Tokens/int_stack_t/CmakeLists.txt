@@ -11,7 +11,10 @@ add_executable(
         int_stack_tests.cc
         int_stack.c
 )
-
+add_executable(
+        Forth_tokens
+)
+cd ..
 target_link_libraries(
         int_stack_tests
         gtest_main

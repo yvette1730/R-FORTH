@@ -42,4 +42,5 @@ extern int int_stack_drop2(int_stack_t *stk);
 extern int int_stack_subtract(int_stack_t *stk);
 extern int int_stack_multiply(int_stack_t *stk);
 extern int int_stack_divide(int_stack_t *stk);
+extern void define_variable(int_stack_t *stk); 
 #endif // INT_STACK_H

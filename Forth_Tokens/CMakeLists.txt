@@ -1,3 +1,5 @@
 add_executable(
 	Forth_Tokens
-	token.c)
+	token.c
+	token.h)
+

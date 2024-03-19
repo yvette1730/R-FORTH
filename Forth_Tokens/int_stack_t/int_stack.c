@@ -1,3 +1,4 @@
+ls 
 // int_stack.c
 
 #include "int_stack.h"
@@ -230,4 +231,3 @@ int int_stack_multiply(int_stack_t* stk)
         return 0; 
     }
 }
-
