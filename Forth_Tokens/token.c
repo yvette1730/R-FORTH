@@ -17,20 +17,21 @@ token_t* create_token(token_type_t type, const char* text)
 
 // Function to convert token type to string
 token_type_t get_token_type(const char *token_text) {
-    if (isdigit((unsigned char)*token_text))
-     {
+    if (isdigit((unsigned char)*token_text)) {
         return NUMBER;
-    } else if ((*token_text == '+' || *token_text == '-' || *token_text == '*' || *token_text== '/')) {
+    } else if ((*token_text == '+' || *token_text == '-' || *token_text == '*' || *token_text == '/')) {
         return OPERATOR;
-    } else if (*token_text == ';' || *token_text == ':') 
-    {
+    } else if (*token_text == ';' || *token_text == ':') {
         return SYMBOL;
-    } 
-    else 
-    {
+    } else if (strcmp(token_text, "if") == 0 || strcmp(token_text, "else") == 0 || strcmp(token_text, "then") == 0) {
+        return CONDITION;
+    } else if (isalpha((unsigned char)*token_text)) {  // Check if token starts with a letter (assumed variable or constant)
         return WORD;
+    } else {
+        return UNKNOWN;
     }
 }
+
 
 const char* token_string(token_type_t type)
 {
@@ -46,9 +47,24 @@ const char* token_string(token_type_t type)
     {
         return "Symbol"; 
     }
-    else 
+    else if(type == WORD)
     {
         return "Word";
+    }
+    else if(type == CONSTANT)
+    {
+        return "Constant";
+    }
+    else if(type == CONDITION)
+    {
+        return "Condition"
+    }
+    else if(type == VARIABLE)
+    {
+        return "Variable"
+    }
+    else{
+        return "Unknown/End of file "
     }
 }
 
@@ -66,3 +82,6 @@ char* find_token(char* text)
     }
 
 }
+//add a function to support variables and constants 
+
+//add support for conditions (boolean expressions)

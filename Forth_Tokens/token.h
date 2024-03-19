@@ -11,6 +11,9 @@ typedef enum token_type_t {
     OPERATOR,
     SYMBOL,
     WORD,
+    VARIABLE, 
+    CONSTANT, 
+    CONDITION,
     NOT_DEFINED,
     END_OF_FILE // Define END_OF_FILE token type
 }token_type_t;
